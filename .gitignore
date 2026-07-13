@@ -1,0 +1,8 @@
+.vscode/
+
+# Compiled C/C++ outputs
+*.out
+*.exe
+*.o
+*.obj
+stackAndQueues
