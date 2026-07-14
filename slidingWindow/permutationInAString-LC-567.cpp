@@ -40,6 +40,8 @@
 
    5. If no matching window is found after traversing s2, return false.
 
+   6. We can do early checking also if s1.size() > s2.size() return false;
+
    Time Complexity: O(m + n) because building frequency costs O(m), sliding window O(n) with
                     26 comparisons so O(m + 26n) which means O(m+n) as 26 is constant
    Space Complexity: O(1) because only 26 spaces are being taken so O(26) is O(1) as 26 is 
@@ -59,6 +61,7 @@ Question Link: https://leetcode.com/problems/permutation-in-string/
 class Solution {
 public:
     bool checkInclusion(string s1, string s2) {
+        if(s1.size() > s2.size()) return false;
         vector<int> freq1(26, 0);
         vector<int> freq2(26, 0);
 
