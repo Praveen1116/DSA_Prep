@@ -15,7 +15,16 @@ Grandchild	    Child of a node's child
 Leaf Node	    Node with no children
 Path	        Sequence of connected nodes
 Subtree	        A node along with all its descendants
-Level	        Position of a node from the root (usually starts at 1)
+Level	        Position of a node from the root (usually starts at 0)
 Depth	        Number of edges from the root to the node
 Height	        Number of edges in the longest path from the node to a leaf
 Path Length	    Number of edges in a path between two nodes
+
+Properties of Binary Tree(BT)
+1 -> if h = Height of a BT, then
+    a => maximum number of leaves = 2^h
+    b => maximum number of nodes = 2^(h+1) - 1
+
+2 -> if a BT contains m nodes at level 1, it contains at most 2m nodes at level l+1
+3 -> since a BT can contain at most 1 node at level 0(root), it can contain atmost 2^l nodes at level l
+4 -> the total number of edges in full BT within n nodes is n-1
