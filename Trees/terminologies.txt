@@ -1,0 +1,21 @@
+Tree -> Non-linear, hierarchail data structure consisiting of nodes connected by edges
+Binary tree -> A tree when every node has at most two children
+
+
+Term	        Definition
+-------------------------------------------------------------------
+Root	        Topmost node with no parent
+Parent	        Node having one or more children
+Child	        Node directly below a parent
+Ancestor	    Any node on the path from the root to a node
+Descendant	    Any node below a given node
+Siblings	    Nodes with the same parent
+Grandparent	    Parent of a node's parent
+Grandchild	    Child of a node's child
+Leaf Node	    Node with no children
+Path	        Sequence of connected nodes
+Subtree	        A node along with all its descendants
+Level	        Position of a node from the root (usually starts at 1)
+Depth	        Number of edges from the root to the node
+Height	        Number of edges in the longest path from the node to a leaf
+Path Length	    Number of edges in a path between two nodes
