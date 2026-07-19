@@ -1,3 +1,20 @@
+/*
+  Concept to remember
+BST Property (Left < Root < Right)
+Inorder Traversal gives sorted order
+Search follows only one path
+Minimum = Leftmost node
+Maximum = Rightmost node
+Successor = Next Greater
+Predecessor = Previous Smaller
+Three Deletion Cases
+Balanced vs Skewed BST
+Average O(log n) vs Worst O(n)
+Height vs Depth vs Level
+BST Invariant (property must always remain true)
+*/
+
+
 /* Problem:
    Given the root of a Binary Search Tree (BST) and a value, search for the
    node containing that value.
