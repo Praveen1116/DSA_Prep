@@ -1,0 +1,105 @@
+/* Problem:
+   Given a binary tree and an integer k, return all the nodes that are at
+   distance k from the root.
+
+   The root is at distance 0, its children are at distance 1, and so on.
+*/
+
+/* Intuition:
+   Since we need to find all nodes level by level, Breadth First Search (BFS)
+   is the most suitable approach.
+
+   Every level in BFS represents the distance from the root:
+      - Level 0 -> Distance 0
+      - Level 1 -> Distance 1
+      - Level 2 -> Distance 2
+      ...
+
+   So, when we reach the (k + 1)th level in our traversal (because count starts
+   from 1), all nodes in that level are exactly k distance away from the root.
+*/
+
+/* Approach:
+   1. If the tree is empty, return an empty vector.
+
+   2. Push the root node into a queue.
+
+   3. Maintain a variable count to track the current level.
+      - Increment count before processing each level.
+
+   4. While the queue is not empty:
+      - Store the current queue size.
+      - Process all nodes of the current level.
+
+   5. For every node:
+      - If count == k + 1, store its value in the answer.
+      - Push its left child into the queue (if it exists).
+      - Push its right child into the queue (if it exists).
+
+   6. After all levels are processed, return the answer.
+
+   Catching Point:
+   Since the root is considered to be at distance 0, but our level counter
+   starts from 1, we check:
+
+         count == k + 1
+
+   instead of:
+
+         count == k
+
+   This correctly maps the BFS level to the required distance.
+
+   Time Complexity: O(n)
+   Space Complexity: O(n)
+*/
+
+Question Link: https://www.geeksforgeeks.org/problems/k-distance-from-root/1
+
+// Code:
+
+/* Binary Tree Node Structure
+class Node {
+public:
+    int data;
+    Node* left;
+    Node* right;
+
+    Node(int val) {
+        data = val;
+        left = right = nullptr;
+    }
+};*/
+
+class Solution {
+  public:
+    vector<int> kdistance(int k, Node *root) {
+        // code here
+        int count = 0;
+        queue<Node*> q;
+        q.push(root);
+        vector<int> ans;
+        
+        while(!q.empty())
+        {
+            count++;
+            int size = q.size();
+            
+            for(int i=0; i<size; i++)
+            {
+                Node* node = q.front();
+                q.pop();
+                
+                if(count == k+1)
+                {
+                    ans.push_back(node->data);
+                }
+                
+                if(node->left) q.push(node->left);
+                if(node->right) q.push(node->right);
+            }
+        }
+        
+        return ans;
+    }
+};
